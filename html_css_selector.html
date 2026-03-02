@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS SELECTOR</title>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 15px;
+            line-height: 1.6;
+        }
+
+        /* .container {
+            margin: auto;
+            max-width: 1200px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        } */
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        pre {
+            margin-top: 1px;
+            border-radius: 20px;
+            overflow-x: auto;
+        }
+
+        p {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            margin-top: 8px;
+            font-size: 15px;
+            color: #030303;
+            background: #f9f7f7;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            border-radius: 6px;
+        }
+
+        span {
+            color: green;
+        }
+
+        hr {
+            height: 1px;
+            border: none;
+            background-color: black;
+        }
+        .page-title{
+            /* max-width: 700px;
+            margin: auto; */
+            /* width: 780px; */
+            background-color: rgb(44, 44, 184);
+            color: white;
+            border-radius: 10px;
+            text-align:center;
+            /* margin-left: 16.5%;
+            margin-top: 0%; */
+        }
+    </style>
+</head>
+
+<body>
+    <H1 class="page-title">HTML/CSS SELECTORS</H1>
+    <div class="container">
+        <h1>🔥 1️⃣ Universal Selector</h1>
+        <pre><code class="language-css">*{
+    margine:0;
+}</code></pre>
+        <p>
+            👉 सभी elements <span>(body, p, h1, div… </span>सब) का margin 0 हो जाएगा।
+        </p>
+        <hr>
+        <h1>🔥 2️⃣ Element (Type) Selector</h1>
+        <pre><code class="language-css">p {
+  color: blue;
+}</code></pre>
+        <p>
+            👉 सभी <span>&lt;p&gt;</span> का text blue हो जाएगा।
+        </p>
+        <hr>
+        <h1>🔥 3️⃣ Class Selector</h1>
+        <pre><code class="language-css">.box {
+  background-color: yellow;
+}</code></pre>
+        <p>
+            👉 जिन elements में <span>class="box"</span> है, उनका background yellow होगा।
+        </p>
+        <hr>
+        <h1>
+            🔥 4️⃣ ID Selector
+        </h1>
+        <pre><code class="language-css">#main {
+  color: red;
+}</code></pre>
+        <p>
+            👉 जिस element का <span>id="main"</span> है, उसका text red होगा।
+        </p>
+        <hr>
+        <h1>🔥 5️⃣ Grouping Selector</h1>
+        <pre><code class="language-css">h1, h2, p {
+  font-family: Arial;
+}</code></pre>
+        <p>👉 सभी <span>&lt;h1&gt;, &lt;h2&gt;</span> और <span>&lt;p&gt;</span>में Arial font लग जाएगा।</p>
+        <hr>
+        <h1>🔥 6️⃣ Descendant Selector (space)</h1>
+        <pre><code class="language-css">div p {
+  color: green;
+}</code></pre>
+        <p>👉 div के अंदर जितने भी <span>&lt;p&gt;</span> हैं, उनका text green होगा।</p>
+        <hr>
+        <h1>🔥 7️⃣ Child Selector (>)</h1>
+        <pre><code class="language-css">div > p {
+  color: orange;
+}</code></pre>
+        <p>👉 सिर्फ <span>div</span> के direct child <span>&lt;p&gt;</span> orange होंगे।</p>
+        <hr>
+        <h1>🔥 8️⃣ Adjacent Sibling (+)</h1>
+        <pre><code class="language-css">h1 + p {
+  color: purple;
+}</code></pre>
+        <p>👉 <span>h1</span> के तुरंत बाद वाला पहला <span>&lt;p&gt;</span> purple होगा।</p>
+        <hr>
+        <h1>🔥 9️⃣ General Sibling (~)</h1>
+        <pre><code class="language-css">h1 ~ p {
+  color: brown;
+}</code></pre>
+        <p>👉 <span>h1</span> के बाद आने वाले सभी <span>&lt;p&gt;</span> brown हो जाएंगे।</p>
+        <hr>
+        <h1>🔥 🔟 Attribute Selector (Exist)</h1>
+        <pre><code class="language-css">input[required] {
+  border: 2px solid red;
+}</code></pre>
+        <p>👉 जिन input में <span>required</span> attribute है, उनका border red होगा।</p>
+        <hr>
+        <h1>🔥 1️⃣1️⃣ Attribute Exact Match</h1>
+        <pre><code class="language-css">input[type="text"] {
+  background-color: lightgray;
+}</code></pre>
+        <p>👉 सिर्फ <span>type="text"</span> वाले input lightgray होंगे।</p>
+        <hr>
+        <h1>🔥 1️⃣2️⃣ Attribute Starts With (^=)</h1>
+        <pre><code class="language-css">a[href^="https"] {
+  color: green;
+}</code></pre>
+        <p>👉 जिन links का <span>href https </span>से शुरू होता है, वे green होंगे।</p>
+        <hr>
+        <h1>🔥 1️⃣3️⃣ Attribute Ends With ($=)</h1>
+        <pre><code class="language-css">a[href$=".pdf"] {
+  color: red;
+}</code></pre>
+        <p>👉 जिन links का अंत <span>.pdf</span> से होता है, वे red होंगे।</p>
+        <hr>
+        <h1>🔥 1️⃣4️⃣ Attribute Contains (*=)</h1>
+        <pre><code class="language-css">a[href*="google"] {
+  color: blue;
+}</code></pre>
+        <p>👉 जिन links में google word है, वे blue होंगे।</p>
+        <hr>
+        <h1>🔥 1️⃣5️⃣ Pseudo-Class :hover</h1>
+        <pre><code class="language-css">button:hover {
+  background-color: black;
+}</code></pre>
+        <p>👉 जब mouse button पर जाएगा, background black हो जाएगा।</p>
+        <hr>
+        <h1>🔥 1️⃣6️⃣ Pseudo-Class :focus</h1>
+        <pre><code class="language-css">input:focus {
+  border: 3px solid blue;
+}</code></pre>
+        <p>👉 जब input पर click करेंगे, border blue हो जाएगा।</p>
+        <hr>
+        <h1>🔥 1️⃣7️⃣ Pseudo-Class :first-child</h1>
+        <pre><code class="language-css">p:first-child {
+  color: red;
+}</code></pre>
+        <p>👉 जो p अपने parent का पहला child है, वही red होगा।</p>
+        <hr>
+        <h1>🔥 1️⃣8️⃣ Pseudo-Class :last-child</h1>
+        <pre><code class="language-css">p:last-child {
+  color: green;
+}</code></pre>
+        <p>👉 जो p आखिरी child है, वही green होगा।</p>
+        <hr>
+        <h1>🔥 1️⃣9️⃣ Pseudo-Class :nth-child()</h1>
+        <pre><code class="language-css">li:nth-child(2) {
+  color: blue;
+}</code></pre>
+        <p>👉 हर list का दूसरा <span>&lt;li&gt;</span> blue होगा।</p>
+        <hr>
+        <h1>🔥 2️⃣0️⃣ Pseudo-Class :not()</h1>
+        <pre><code class="language-css">p:not(.active) {
+  color: gray;
+}</code></pre>
+        <p>👉 जिन <span>&lt;p&gt;</span> में class active नहीं है, वे gray होंगे।</p>
+        <hr>
+        <h1>🔥 2️⃣1️⃣ Pseudo-Element ::before</h1>
+        <pre><code class="language-css">p::before {
+  content: "👉 ";
+}</code></pre>
+        <p>👉 हर paragraph से पहले 👉 symbol जुड़ जाएगा।</p>
+        <hr>
+        <h1>🔥 2️⃣2️⃣ Pseudo-Element ::after</h1>
+        <pre><code class="language-css">p::after {
+  content: " ✔";
+}</code></pre>
+        <p>👉 हर paragraph के बाद ✔ जुड़ जाएगा।</p>
+        <hr>
+        <h1>🔥 2️⃣3️⃣ Pseudo-Element ::first-letter</h1>
+        <pre><code class="language-css">p::first-letter {
+  font-size: 30px;
+}</code></pre>
+        <p>👉 हर paragraph का पहला letter बड़ा हो जाएगा।</p>
+        <hr>
+        <h1>🔥 2️⃣4️⃣ :is()</h1>
+        <pre><code class="language-css">:is(h1, h2) {
+  color: red;
+}</code></pre>
+        <p>👉 h1 और h2 दोनों red होंगे।</p>
+        <hr>
+        <h1>🔥 2️⃣5️⃣ :has() (Advanced)</h1>
+        <pre><code class="language-css">div:has(p) {
+  background-color: lightblue;
+}</code></pre>
+        <p>👉 जिन div के अंदर p है, वे lightblue हो जाएंगे।</p>
+        <hr>
+    </div>
+    <!-- Prism Script -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</body>
+
+</html>
