@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css flexbox notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px 320px;
+        }
+
+        @media (max-width: 426px) {
+            body {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            body {
+                margin: 15px;
+            }
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+            background-color: rgb(241, 234, 234);
+            padding: 12px;
+            border: 1px solid rgb(94, 72, 72);
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔥 CSS Flexbox Notes</h1>
+    <hr>
+    <h2>1️⃣ Flex Axis</h2>
+    <p>Flexbox में दो axis होती हैं।</p>
+    <table class="my-table">
+  <tr>
+    <th>Axis</th>
+    <th>क्या है</th>
+  </tr>
+
+  <tr>
+    <td>Main Axis</td>
+    <td>जिस direction में items चलते हैं</td>
+  </tr>
+
+  <tr>
+    <td>Cross Axis</td>
+    <td>Main axis के opposite direction</td>
+  </tr>
+</table>
+<p>अगर</p>
+<pre><code class="language-css">flex-direction: row;</code></pre>
+तो
+<pre>Main Axis  → left to right
+Cross Axis ↓ top to bottom</pre>
+<p>अगर</p>
+<pre><code class="language-css">flex-direction: column;</code></pre>
+<p>तो</p>
+<pre>Main Axis  ↓ top to bottom
+Cross Axis → left to right</pre>
+<hr>
+<h2>2️⃣ Flex Direction</h2>
+<p>items किस direction में arrange होंगे।</p>
+<pre><code class="language-css">flex-direction: row;</code></pre>
+<table class="my-table">
+  <tr>
+    <th>value</th>
+    <th>क्या करेगा</th>
+  </tr>
+
+  <tr>
+    <td>row</td>
+    <td>left → right</td>
+  </tr>
+
+  <tr>
+    <td>row-reverse</td>
+    <td>right → left</td>
+  </tr>
+
+  <tr>
+    <td>column</td>
+    <td>top → bottom</td>
+  </tr>
+
+  <tr>
+    <td>column-reverse</td>
+    <td>bottom → top</td>
+  </tr>
+</table>
+<hr>
+<h2>3️⃣ Justify Content</h2>
+<p> <b>Main Axis</b> में items की alignment।</p>
+<pre><code class="language-css">justify-content: center;</code></pre>
+<table class="my-table">
+  <tr>
+    <th>value</th>
+    <th>क्या करेगा</th>
+  </tr>
+
+  <tr>
+    <td>flex-start</td>
+    <td>start में</td>
+  </tr>
+
+  <tr>
+    <td>flex-end</td>
+    <td>end में</td>
+  </tr>
+
+  <tr>
+    <td>center</td>
+    <td>center</td>
+  </tr>
+
+  <tr>
+    <td>space-between</td>
+    <td>items के बीच space</td>
+  </tr>
+
+  <tr>
+    <td>space-around</td>
+    <td>हर item के around space</td>
+  </tr>
+
+  <tr>
+    <td>space-evenly</td>
+    <td>equal space</td>
+  </tr>
+</table>
+<hr>
+<h2>4️⃣ Align Items</h2>
+<p><b>Cross Axis</b> में items की alignment।</p>
+<pre><code class="language-css">align-items: center;</code></pre>
+<table class="my-table">
+  <tr>
+    <th>value</th>
+    <th>क्या करेगा</th>
+  </tr>
+
+  <tr>
+    <td>stretch</td>
+    <td>default</td>
+  </tr>
+
+  <tr>
+    <td>flex-start</td>
+    <td>start</td>
+  </tr>
+
+  <tr>
+    <td>flex-end</td>
+    <td>end</td>
+  </tr>
+
+  <tr>
+    <td>center</td>
+    <td>center</td>
+  </tr>
+
+  <tr>
+    <td>baseline</td>
+    <td>text baseline</td>
+  </tr>
+</table>
+<hr>
+<h2>5️⃣ Flex Wrap</h2>
+<p>items next row में जाएंगे या नहीं।</p>
+<pre><code class="language-css">flex-wrap: wrap;</code></pre>
+<table class="my-table">
+  <tr>
+    <th>value</th>
+    <th>क्या करेगा</th>
+  </tr>
+
+  <tr>
+    <td>nowrap</td>
+    <td>default, wrap नहीं</td>
+  </tr>
+
+  <tr>
+    <td>wrap</td>
+    <td>next line में</td>
+  </tr>
+
+  <tr>
+    <td>wrap-reverse</td>
+    <td>reverse direction wrap</td>
+  </tr>
+</table>
+<hr>
+<h2>6️⃣ Wrap Reverse</h2>
+<p>items next line में जाएंगे लेकिन <b>reverse direction</b> में।</p>
+<pre><code class="language-css">flex-wrap: wrap-reverse;</code></pre>
+<p>मतलब नई row <b>ऊपर की तरफ बनती है।</b></p>
+<hr>
+<h2>7️⃣ Align Content</h2>
+<p>multiple rows के बीच space control करता है।</p>
+<p>⚠️ यह तभी काम करेगा जब:</p>
+<pre>flex-wrap: wrap;</pre>
+<pre><code class="language-css">align-content: center;</code></pre>
+<table class="my-table">
+  <tr>
+    <th>value</th>
+    <th>क्या करेगा</th>
+  </tr>
+
+  <tr>
+    <td>flex-start</td>
+    <td>ऊपर</td>
+  </tr>
+
+  <tr>
+    <td>flex-end</td>
+    <td>नीचे</td>
+  </tr>
+
+  <tr>
+    <td>center</td>
+    <td>center</td>
+  </tr>
+
+  <tr>
+    <td>space-between</td>
+    <td>rows के बीच space</td>
+  </tr>
+
+  <tr>
+    <td>space-around</td>
+    <td>rows के around space</td>
+  </tr>
+
+  <tr>
+    <td>stretch</td>
+    <td>default</td>
+  </tr>
+</table>
+<hr>
+<h2>8️⃣ Flex Flow</h2>
+<p><b>flex-direction + flex-wrap</b> का shortcut।</p>
+<pre>flex-flow: flex-direaction value (space) flex-wrap value; </pre>
+<pre><code class="language-css">flex-flow: row wrap;</code></pre>
+<hr>
+<h2>9️⃣ Gap Property</h2>
+<p>items के बीच distance।</p>
+<pre><code class="language-css">gap: 20px;</code></pre>
+<p>या</p>
+<pre><code class="language-css">row-gap: 20px;
+column-gap: 10px;</code></pre>
+    <p>या</p>
+    <pre>gap: row column</pre>
+    <pre><code class="language-css">gap: 20px 12px;</code></pre>
+<hr>
+<h2>🔟 Item Property</h2>
+<p>ये properties <b>flex items</b> पर लगती हैं।</p>
+<hr>
+<h2>Order</h2>
+<p>items की position change करता है।</p>
+<pre><code class="language-css">order: 2;</code></pre>
+<p>default</p>
+<pre>order: 0</pre>
+<p>जिसका order कम होगा वह पहले आएगा।</p>
+<b>NOTE: "-" accending "+" descending</b>
+<hr>
+<h2>Flex Grow</h2>
+<p>extra space को fill करता है।</p>
+<pre><code class="language-css">flex-grow: 1;</code></pre>
+<p>example</p>
+<pre>item1 → flex-grow:1
+item2 → flex-grow:2</pre>
+<p>तो item2 <b>double space</b> लेगा।</p>
+<hr>
+<h2>Flex Shrink</h2>
+<p>space कम होने पर item कितना shrink होगा।</p>
+<pre><code class="language-css">flex-shrink: 1;</code></pre>
+<hr>
+<h2>Align Self</h2>
+<p>single item की alignment change करता है।</p>
+<pre><code class="language-css">align-self: center;</code></pre>
+<pre>align-content: none; hone jaruri hai.</pre>
+<table class="my-table">
+  <tr>
+    <th>value</th>
+  </tr>
+
+  <tr>
+    <td>flex-start</td>
+  </tr>
+
+  <tr>
+    <td>flex-end</td>
+  </tr>
+
+  <tr>
+    <td>center</td>
+  </tr>
+
+  <tr>
+    <td>stretch</td>
+  </tr>
+</table>
+<hr>
+<p>✅ ये लगभग <b>90% Flexbox notes</b> हैं जो practically use होते हैं।</p>
+<hr>
+
+
+
+
+
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
