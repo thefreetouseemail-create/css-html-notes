@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px 320px;
+        }
+
+        @media (max-width: 426px) {
+            body {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            body {
+                margin: 15px;
+            }
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+            background-color: rgb(242, 237, 237);
+            border: 1px solid rgb(52, 51, 51);
+            overflow-x: auto;
+        }
+
+        code {
+            white-space: pre;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+        .container {
+            height: 50vh;
+            background-color: rgb(1, 18, 44);
+            border: 1px solid rgb(102, 81, 135);
+            display: flex;
+            align-items: center;
+
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(208, 19, 208);
+            margin: 12px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            font-size: 30px;
+            color: #f2f3f4;
+            border-radius: 6px;
+
+        }
+
+        /* Animation */
+        @keyframes spin {
+            0% {}
+
+            50% {
+                background-color: yellow;
+            }
+
+            100% {
+                transform: translatex(200px) rotate(360deg) scale(2.4);
+                border-radius: 50%;
+            }
+        }
+
+        @keyframes flip {
+
+            /* from{
+
+            } */
+            to {
+                background-color: blue;
+                transform: translatex(200px) rotatey(180deg) scale(2.4);
+            }
+        }
+
+        .box-1:hover {
+            cursor: pointer;
+            animation-name: spin;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 2s;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+            /* animation-fill-mode: forwards; */
+        }
+
+        .box-2:hover {
+            animation: flip 3s ease-in-out 2s 2 backwards;
+            cursor: pointer;
+            /* animation-name: flip;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 2s;
+            animation-iteration-count: 2;
+            /* animation-direction:alternate;   inactive */
+            /*animation-fill-mode:backwards; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔥 CSS Animation</h1>
+    <pre><code class="language-css">@keyframes spin {
+    0% {}
+
+    50% {
+        background-color: yellow;
+    }
+
+    100% {
+        transform: translatex(200px) rotate(360deg) scale(2.4);
+        border-radius: 50%;
+    }
+} 
+.box-1:hover {
+    cursor: pointer;
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: 4;
+    animation-direction:alternate;
+    /* animation-fill-mode: forwards; */
+}    
+</code></pre>
+        <div class="container">
+            <div class="box-1 box">Spin</div>
+        </div>
+        <pre><code class="language-css">@keyframes flip {
+/* from{} */
+to {
+    background-color: blue;
+    transform: translatex(200px) rotatey(180deg) scale(2.4);
+}
+        }
+.box-2:hover {
+    animation: flip 3s ease-in-out 2s 2 backwards;
+    cursor: pointer;
+    /* animation-name: flip;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: 2;
+    animation-direction:alternate; ---INCACTIVE---
+    /*animation-fill-mode:backwards; */
+}
+</code></pre>
+        <div class="container">
+            <div class="box-2 box">Flip</div>
+        </div>
+
+
+    <table class="my-table">
+        <tr>
+            <th>Property</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>duration</td>
+            <td>Animation कितने time तक चलेगा</td>
+        </tr>
+    </table>
+
+
+    <table class="my-table">
+        <tr>
+            <th>Property</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>timing-function</td>
+            <td>Animation किस speed pattern से चलेगा</td>
+        </tr>
+    </table>
+
+    <table class="my-table">
+        <tr>
+            <th>Value</th>
+            <th>मतलब</th>
+        </tr>
+        <tr>
+            <td>linear</td>
+            <td>same speed</td>
+        </tr>
+        <tr>
+            <td>ease</td>
+            <td>slow start, fast middle</td>
+        </tr>
+        <tr>
+            <td>ease-in</td>
+            <td>slow start</td>
+        </tr>
+        <tr>
+            <td>ease-out</td>
+            <td>slow end</td>
+        </tr>
+        <tr>
+            <td>ease-in-out</td>
+            <td>slow start + slow end</td>
+        </tr>
+    </table>
+
+
+    <table class="my-table">
+        <tr>
+            <th>Property</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>delay</td>
+            <td>Animation कितने time बाद start होगा</td>
+        </tr>
+    </table>
+
+
+    <table class="my-table">
+        <tr>
+            <th>Property</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>iteration-count</td>
+            <td>Animation कितनी बार repeat होगा</td>
+        </tr>
+    </table>
+
+    <table class="my-table">
+        <tr>
+            <th>Value</th>
+            <th>मतलब</th>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td>जितनी बार number दिया होगा</td>
+        </tr>
+        <tr>
+            <td>infinite</td>
+            <td>animation लगातार चलता रहेगा</td>
+        </tr>
+    </table>
+
+
+    <table class="my-table">
+        <tr>
+            <th>Property</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>direction</td>
+            <td>Animation किस direction में चलेगा</td>
+        </tr>
+    </table>
+
+    <pre>
+    <b>📌 Note:
+    alternate में 1 जाना + 1 आना = 2 iterations</b>
+</pre>
+
+    <table class="my-table">
+        <tr>
+            <th>Value</th>
+            <th>मतलब</th>
+        </tr>
+        <tr>
+            <td>normal</td>
+            <td>start → end</td>
+        </tr>
+        <tr>
+            <td>reverse</td>
+            <td>end → start</td>
+        </tr>
+        <tr>
+            <td>alternate</td>
+            <td>start → end → start</td>
+        </tr>
+        <tr>
+            <td>alternate-reverse</td>
+            <td>end → start → end</td>
+        </tr>
+    </table>
+
+
+    <table class="my-table">
+        <tr>
+            <th>Property</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>fill-mode</td>
+            <td>Animation खत्म होने के बाद element किस state में रहेगा</td>
+        </tr>
+    </table>
+
+    <table class="my-table">
+        <tr>
+            <th>Value</th>
+            <th>मतलब</th>
+        </tr>
+        <tr>
+            <td>none</td>
+            <td>default state</td>
+        </tr>
+        <tr>
+            <td>forwards</td>
+            <td>last frame पर रुक जाएगा</td>
+        </tr>
+        <tr>
+            <td>backwards</td>
+            <td>first frame apply</td>
+        </tr>
+        <tr>
+            <td>both</td>
+            <td>first + last frame apply</td>
+        </tr>
+    </table>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

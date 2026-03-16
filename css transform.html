@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css transform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px 320px;
+        }
+
+        @media (max-width: 426px) {
+            body {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            body {
+                margin: 15px;
+            }
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+            background-color: rgb(250, 243, 243);
+            padding: 12px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .bg-box {
+            display: flex;
+            align-items: center;
+            height: 140px;
+            width: 140px;
+            background-color: rgb(241, 197, 238);
+        }
+
+        .item {
+            height: 140px;
+            width: 140px;
+            background-color: rgb(7, 145, 237);
+            transition: 1s;
+            cursor: pointer;
+        }
+
+        .translatex:hover {
+            transform: translateX(50px);
+        }
+
+        .translatey:hover {
+            transform: translateY(50px);
+        }
+
+        .translate:hover {
+            transform: translate(50px, 20px);
+        }
+
+        .scalex:hover {
+            transform: scaleX(2);
+        }
+
+        .scaley:hover {
+            transform: scaleY(2);
+        }
+
+        .scale:hover {
+            transform: scale(1.5);
+        }
+
+        .rotate:hover {
+            transform: rotate(45deg);
+        }
+        .rotateX:hover{
+            transform: rotatex(180deg);
+        }
+        .rotateY:hover{
+            transform: rotatey(180deg);
+        }
+        .rotateZ:hover{
+            transform: rotateZ(90deg);
+        }
+
+        .skewx:hover {
+            transform: skewX(20deg);
+        }
+
+        .skewy:hover {
+            transform: skewY(20deg);
+        }
+
+        .skew:hover {
+            transform: skew(20deg, 10deg);
+        }
+
+        .multiple-transform:hover {
+            transform: translateX(100px) rotate(45deg) scale(1.2);
+        }
+
+        .transform-origin:hover {
+            transform-origin: top left;
+            transform: rotate(45deg);
+        }
+
+        .combo:hover {
+            transform: translatey(-50px) rotate(-45deg) scaley(1.2) skewx(50deg);
+        }
+        .transition{
+            transition: 0.3s;
+        }
+        .transition:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔥 CSS Transform</h1>
+    <h3>1. Transform Property क्या है</h3>
+    <p><b>transform</b> CSS property किसी element की <b>shape या position change</b> करती है बिना document flow को
+        disturb किए।</p>
+    <hr>
+    <h2>2. Transform Functions (Main Concepts)</h2>
+    <h3>(1) translate()</h3>
+    <p>Element को <b>move (shift)</b> करता है।</p>
+    <h3>translateX()</h3>
+    <p>Element को <b>left-right</b> move करता है.</p>
+    <pre><code class="language-css">transform: translateX(50px);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="translatex item"></div>
+        </div>
+    </div>
+    <h3>translateY()</h3>
+    <p>Element को <b>up-down</b> move करता है.</p>
+    <pre><code class="language-css">transform: translateY(50px);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="translatey item"></div>
+        </div>
+    </div>
+    <h3>translate()</h3>
+    <pre><code class="language-css">transform: translate(50px, 20px);</code></pre>
+    <p>पहली value → X direction <br>
+        दूसरी value → Y direction</p>
+    <div class="box">
+        <div class="bg-box">
+            <div class="translate item"></div>
+        </div>
+    </div>
+    <hr>
+    <h2>(2) scale()</h2>
+    <p>Element का <b>size increase या decrease</b> करता है.</p>
+    <h3>scaleX()</h3>
+    <pre><code class="language-css">transform: scaleX(2);</code></pre>
+    <p>width 2× हो जाएगी</p>
+    <div class="box">
+        <div class="bg-box">
+            <div class="scalex item"></div>
+        </div>
+    </div>
+    <h3>scaleY()</h3>
+    <pre><code class="language-css">transform: scaleY(2);</code></pre>
+    <p>height 2× हो जाएगी</p>
+    <div class="box">
+        <div class="bg-box">
+            <div class="scaley item"></div>
+        </div>
+    </div>
+    <h3>scale()</h3>
+    <pre><code class="language-css">transform: scale(1.5);</code></pre>
+    <p>Element <b>1.5 times</b> बड़ा हो जाएगा</p>
+    <div class="box">
+        <div class="bg-box">
+            <div class="scale item"></div>
+        </div>
+    </div>
+    <hr>
+    <h2>(3) rotate()</h2>
+    <p>Element को <b>rotate</b> करता है.</p>
+    <pre><code class="language-css">transform: rotate(45deg);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="rotate item"></div>
+        </div>
+    </div>
+    <h3>rotateX()</h3>
+    <div class="box">
+        <div class="bg-box">
+            <div class="rotateX item">rotateX 👆</div>
+        </div>
+    </div>
+    <h3>rotateY()</h3>
+    <div class="box">
+        <div class="bg-box">
+            <div class="rotateY item">rotateY 👆</div>
+        </div>
+    </div>
+    <h3>rotateZ()</h3>
+    <div class="box">
+        <div class="bg-box">
+            <div class="rotateZ item">rotateZ 👆</div>
+        </div>
+    </div>
+    <hr>
+    <h2>(4) skew()</h2>
+    <p>Element को <b>tilt (तिरछा)</b> करता है.</p>
+    <h3>skewX()</h3>
+    <pre><code class="language-css">transform: skewX(20deg);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="skewx item"></div>
+        </div>
+    </div>
+    <h3>skewY()</h3>
+    <pre><code class="language-css">transform: skewY(20deg);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="skewy item"></div>
+        </div>
+    </div>
+    <h3>skew()</h3>
+    <pre><code class="language-css">transform: skew(20deg,10deg);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="skew item"></div>
+        </div>
+    </div>
+    <hr>
+    <h2>3. Multiple Transform</h2>
+    <p>एक element पर <b>multiple transforms</b> apply कर सकते हैं।</p>
+    <pre><code class="language-css">transform: translateX(100px) rotate(45deg) scale(1.2);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="multiple-transform item"></div>
+        </div>
+    </div>
+    <p>
+        <b>Order important होता है।</b>
+    </p>
+    <hr>
+    <h2>4. transform-origin</h2>
+    <p>Element <b>किस point से transform होगा</b> यह define करता है।</p>
+    <p>Default:</p>
+    <pre>center center</pre>
+    <p>Example:</p>
+    <pre><code class="language-css">transform-origin: top left;
+transform: rotate(45deg);</code></pre>
+    <p>अब rotation <b>top-left corner</b> से होगा।</p>
+    <div class="box">
+        <div class="bg-box">
+            <div class="transform-origin item"></div>
+        </div>
+    </div>
+    <p>Values:</p>
+    <table class="my-table">
+        <tr>
+            <th>value</th>
+            <th>मतलब</th>
+        </tr>
+
+        <tr>
+            <td>center</td>
+            <td>middle</td>
+        </tr>
+
+        <tr>
+            <td>top</td>
+            <td>ऊपर</td>
+        </tr>
+
+        <tr>
+            <td>bottom</td>
+            <td>नीचे</td>
+        </tr>
+
+        <tr>
+            <td>left</td>
+            <td>left</td>
+        </tr>
+
+        <tr>
+            <td>right</td>
+            <td>right</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>5. Transform Combination</h2>
+    <pre><code class="language-css">transform: translatey(-50px) rotate(-45deg) scaley(1.2) skewx(50deg);</code></pre>
+    <div class="box">
+        <div class="bg-box">
+            <div class="combo item"></div>
+        </div>
+    </div>
+    <hr>
+<h2>6. Transform + Transition (Most Used Combo)</h2>
+<pre><code class="language-css">.box{
+  transition: 0.3s;
+}
+
+.box:hover{
+  transform: scale(1.1);
+}</code></pre>
+<p>अब zoom <b>smooth animation</b> से होगा।</p>
+<div class="box">
+        <div class="bg-box">
+            <div class="transition item"></div>
+        </div>
+    </div>
+<hr style="margin-top: 21px;">
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
