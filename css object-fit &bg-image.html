@@ -132,12 +132,40 @@
             background-image: url("flowers.jpg");
             background-size: cover;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-btn {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 10px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+            list-style: none;
+        }
+
+        .nav-btn:hover {
+            background-color: #172554;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        ul {
+            list-style: none;
+        }
     </style>
 </head>
 
 <body>
 
     <h1>🔥 CSS object-fit (Image / Video Fit Control)</h1>
+    <ul>
+        <li><a href="#background-image" class="nav-btn">background-image</a></li>
+    </ul>
     <p><b style="font-size: large;">काम:</b> <br>
         object-fit यह तय करता है कि <b>image या video अपने container (box) के अंदर कैसे fit होगा।</b></p>
     <p>📌 ज़्यादातर use होता है <span class="span">&lt;img&gt; </span>और <span class="span">&lt;video&gt;</span> के साथ।
@@ -376,7 +404,7 @@ object-position: 100% 0%;</code></pre>
         </tr>
     </table>
     <hr>
-    <h1>🔥 CSS background-image</h1>
+    <h1 id="background-image">🔥 CSS background-image</h1>
     <b style="font-size: 22px;">काम:
     </b>
     <p><span class="span">background-image</span> से <b>div या किसी element के पीछे image लगाई जाती है।</b></p>
