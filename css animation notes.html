@@ -142,6 +142,32 @@
             /* animation-direction:alternate;   inactive */
             /*animation-fill-mode:backwards; */
         }
+
+        .button {
+            display: grid;
+            margin-top: 12px;
+        }
+
+        .button button {
+            padding: 12px;
+            font-size: 17px;
+        }
+
+        .button button a {
+            text-decoration: none;
+            color: green;
+            font-weight: bold;
+        }
+
+        .button button a:hover {
+            cursor: pointer;
+            transform: scale(1.2px);
+            color: blue;
+        }
+
+        button {
+            transform: scale(1.2px);
+        }
     </style>
 </head>
 
@@ -170,10 +196,10 @@
     /* animation-fill-mode: forwards; */
 }    
 </code></pre>
-        <div class="container">
-            <div class="box-1 box">Spin</div>
-        </div>
-        <pre><code class="language-css">@keyframes flip {
+    <div class="container">
+        <div class="box-1 box">Spin</div>
+    </div>
+    <pre><code class="language-css">@keyframes flip {
 /* from{} */
 to {
     background-color: blue;
@@ -192,9 +218,9 @@ to {
     /*animation-fill-mode:backwards; */
 }
 </code></pre>
-        <div class="container">
-            <div class="box-2 box">Flip</div>
-        </div>
+    <div class="container">
+        <div class="box-2 box">Flip</div>
+    </div>
 
 
     <table class="my-table">
@@ -360,7 +386,9 @@ to {
             <td>first + last frame apply</td>
         </tr>
     </table>
-
+    <div class="button">
+        <button><a href="bounce animation.html">Bounce Animation</a></button>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>

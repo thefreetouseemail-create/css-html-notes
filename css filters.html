@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css filters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px 320px;
+        }
+
+        @media (max-width: 426px) {
+            body {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            body {
+                margin: 15px;
+            }
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+    img{
+            width: 300px;
+            filter: blur(2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔥 CSS filter — Quick Notes (Simple but Useful)</h1>
+    <b style="font-size: 22px;">काम:
+</b>
+<p>filter CSS property से image / element पर visual effects लगाए जाते हैं — जैसे blur, brightness, grayscale आदि।</p>
+<p>👉 Mostly use होता है:</p>
+<ul>
+    <li>images</li>
+    <li>icons</li>
+    <li>hover effects</li>
+    <li>UI effects</li>
+</ul>
+<hr>
+<h2>1️⃣ Basic Syntax</h2>
+<pre><code class="language-css">img{
+  filter: blur(4px);
+}</code></pre>
+<p>या multiple filters</p>
+<pre><code class="language-css">img{
+  filter: brightness(120%) contrast(110%);
+}</code></pre>
+<p>📌 Multiple filters space से separate होते हैं।</p>
+<hr>
+<h2>2️⃣ Important Filter Functions</h2>
+<table class="my-table">
+    <tr>
+        <th>Filter</th>
+        <th>काम</th>
+    </tr>
+
+    <tr>
+        <td><code>blur(px)</code></td>
+        <td>image blur करता है</td>
+    </tr>
+
+    <tr>
+        <td><code>brightness(%)</code></td>
+        <td>light / dark control</td>
+    </tr>
+
+    <tr>
+        <td><code>contrast(%)</code></td>
+        <td>contrast increase या decrease</td>
+    </tr>
+
+    <tr>
+        <td><code>grayscale(%)</code></td>
+        <td>black &amp; white effect</td>
+    </tr>
+
+    <tr>
+        <td><code>sepia(%)</code></td>
+        <td>brown vintage effect</td>
+    </tr>
+
+    <tr>
+        <td><code>saturate(%)</code></td>
+        <td>colors strong करता है</td>
+    </tr>
+
+    <tr>
+        <td><code>hue-rotate(deg)</code></td>
+        <td>colors change</td>
+    </tr>
+
+    <tr>
+        <td><code>invert(%)</code></td>
+        <td>colors उल्टा</td>
+    </tr>
+
+    <tr>
+        <td><code>opacity(%)</code></td>
+        <td>transparency</td>
+    </tr>
+
+    <tr>
+        <td><code>drop-shadow()</code></td>
+        <td>shadow effect</td>
+    </tr>
+</table>
+<p>ये सभी CSS filters standard हैं।</p>
+<p>Example</p>
+<p>blue image 2px</p>
+<div class="image">
+    <img src="flowers.jpg" alt="flowers image">
+</div>
+<hr>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
